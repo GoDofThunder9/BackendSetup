@@ -5,4 +5,5 @@ const homecontroller = require("../controller/home_controller");
 route.get('/',homecontroller.home);
 route.get('/game',homecontroller.game);
 route.get('/fame',homecontroller.fame);
+route.use('/users',require('./user'));
 module.exports = route;
