@@ -1,11 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=title%></title>
-</head>
-<body>
-    <h1>codeial /<%=title%></h1>
-</body>
-</html>
+<%- include("./header.ejs")%>
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">TODO APP</a>
+    </div>
+  </nav>
+  <div class="container mt-5">
+    <form action="../index.js" method="post" class="d-flex">
+        <input type="text" placeholder="Enter what to do" class="form-control" name="todo">
+        <button type="button" class="btn-sm btn-dark mx-2">Add todo</button>
+    </form>
+    <ul class="list-group my-5 ">
+    <% for (let i of description)
+    {%> 
+   <li class="list-group-item my-1"><div class="position"><i class="fa-solid fa-xmark"></i></div><%= i.work%></li>
+    <%}%>
+    </ul> 
+  </div>
+<%- include("./footer.ejs")%>
